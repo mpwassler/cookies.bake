@@ -32,8 +32,12 @@
       var readyCooks = {}
       var cooks = document.cookie.split(';')
       cooks.forEach(function(entry){
-          var pairValues = entry.split('=')   
-          readyCooks[pairValues[0].trim()] = pairValues[1].trim() 
+          if(entry != ''){
+      	    
+      	    	var pairValues = entry.split('=')   
+      	    	readyCooks[pairValues[0].trim()] = pairValues[1].trim() 
+
+      	  }
       })
       return readyCooks
     }
